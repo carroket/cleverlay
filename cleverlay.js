@@ -31,6 +31,78 @@
 
 	// TO DO: Write it, cut it, paste it, save it. Load it, check it, quick—rewrite it.
 
+	Cleverlay.prototype.addPageOverlay = function()
+	{
+		var body = document.body;
+
+
+		var backdrop = document.createElement('div');
+
+		var closeButton = document.createElement('div');
+
+
+		this.overlay = document.createElement('div');
+
+
+		// Prepare the overlay.
+
+		this.overlay.id = 'PageOverlay';
+
+
+		// Prepare the backdrop.
+
+		backdrop.id = 'PageOverlayBackdrop';
+
+
+		// Prepare the close button.
+
+		closeButton.id = 'PageOverlayCloseButton';
+
+		closeButton.onclick = removePageOverlay;
+
+
+		// Assemble everything.
+
+		body.appendChild(this.overlay);
+
+		this.overlay.appendChild(backdrop);
+
+		this.overlay.appendChild(closeButton);
+	};
+
+	Cleverlay.prototype.removePageOverlay = function() {
+
+		var body = document.body;
+
+
+		var backdrop = document.getElementById('PageOverlayBackdrop');
+
+		var closeButton = document.getElementById('PageOverlayCloseButton');
+
+		var contentFrame = document.getElementById('PageOverlayContentFrame');
+
+		var swfObject = document.getElementById('PageOverlaySWFObject');
+
+
+		this.overlay = document.getElementById('PageOverlay');
+
+		this.overlay.removeChild(closeButton);
+
+
+		if (swfObject) {
+
+			contentFrame.removeChild(swfObject);
+		}
+
+
+		this.overlay.removeChild(contentFrame);
+
+		this.overlay.removeChild(backdrop);
+
+
+		body.removeChild(this.overlay);
+	};
+
 	// If a namespace was specified, attach cleverlay to it.
 
 	if (options instanceof Object && options.namespace instanceof Object) {
