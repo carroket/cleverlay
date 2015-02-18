@@ -60,11 +60,11 @@
 
 		// Assemble everything.
 
-		document.body.appendChild(this.overlay);
-
 		this.overlay.appendChild(backdrop);
 
 		this.overlay.appendChild(closeButton);
+
+		document.body.appendChild(this.overlay);
 	};
 
 	Cleverlay.prototype.removePageOverlay = function() {
@@ -89,11 +89,11 @@
 		}
 
 
+		document.body.removeChild(this.overlay);
+
 		this.overlay.removeChild(contentFrame);
 
 		this.overlay.removeChild(backdrop);
-
-		document.body.removeChild(this.overlay);
 	};
 
 	// If a namespace was specified, attach cleverlay to it.
