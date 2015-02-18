@@ -10,7 +10,7 @@ Cleverlay already supports images and Adobe Flash content. Support for other kin
 
 ## Availability
 
-The first public release of Cleverlay will soon be available for download from [GitHub](https://github.com/carroket/cleverlay) free of charge.
+A version of Cleverlay that actually functions should soon be available for download from [GitHub](https://github.com/carroket/cleverlay) free of charge. In the meantime, you are welcome to download and tinker with the work in progress. Star it. Watch it. Fork it if you are so inclined. Knock yourself out.
 
 Cleverlay is licensed via the standard MIT License.
 
