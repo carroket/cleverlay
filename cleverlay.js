@@ -17,7 +17,7 @@
 
 \*============================================================================*/
 
-(function(window, options) {
+(function(document, options) {
 
 	var cleverlay = new Cleverlay();
 
@@ -31,10 +31,7 @@
 
 	// TO DO: Write it, cut it, paste it, save it. Load it, check it, quick—rewrite it.
 
-	Cleverlay.prototype.addPageOverlay = function()
-	{
-		var body = document.body;
-
+	Cleverlay.prototype.addPageOverlay = function() {
 
 		var backdrop = document.createElement('div');
 
@@ -63,7 +60,7 @@
 
 		// Assemble everything.
 
-		body.appendChild(this.overlay);
+		document.body.appendChild(this.overlay);
 
 		this.overlay.appendChild(backdrop);
 
@@ -71,9 +68,6 @@
 	};
 
 	Cleverlay.prototype.removePageOverlay = function() {
-
-		var body = document.body;
-
 
 		var backdrop = document.getElementById('PageOverlayBackdrop');
 
@@ -99,8 +93,7 @@
 
 		this.overlay.removeChild(backdrop);
 
-
-		body.removeChild(this.overlay);
+		document.body.removeChild(this.overlay);
 	};
 
 	// If a namespace was specified, attach cleverlay to it.
@@ -110,4 +103,4 @@
 		options.namespace.cleverlay = cleverlay;
 	}
 
-})(window);
+})(window.document);
