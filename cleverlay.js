@@ -55,7 +55,7 @@
 
 		closeButton.id = 'PageOverlayCloseButton';
 
-		closeButton.onclick = removePageOverlay;
+		closeButton.onclick = this.removePageOverlay;
 
 
 		// Assemble everything.
