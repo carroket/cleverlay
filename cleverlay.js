@@ -176,14 +176,14 @@
 
 		if (type == 'swf')
 		{
-			this.overlay = this.addPageOverlay();
+			this.addPageOverlay();
 			this.addSWF(url, width, height);
 			return false;
 		}
 
 		else if (type == 'image')
 		{
-			this.overlay = this.addPageOverlay();
+			this.addPageOverlay();
 			this.addImage(url, width, height, token);
 			return false;
 		}
