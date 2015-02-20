@@ -31,6 +31,39 @@
 
 	// TO DO: Write it, cut it, paste it, save it. Load it, check it, quick—rewrite it.
 
+	Cleverlay.prototype.addImage = function(url, width, height, alt) {
+
+		var contentFrame = document.createElement('div');
+
+		var img = document.createElement('img');
+
+
+		// Prepare the content frame.
+
+		contentFrame.id = 'PageOverlayContentFrame';
+
+		contentFrame.className = 'CleanContentFrame';
+
+		contentFrame.style.width = width + 'px';
+
+
+		// Prepare the img element.
+
+		img.src = url;
+		img.alt = alt;
+		img.width = width;
+		img.height = height;
+
+		img.id = 'PageOverlayImage';
+
+
+		// Assemble the content.
+
+		contentFrame.appendChild(img);
+
+		this.overlay.appendChild(contentFrame);
+	};
+
 	Cleverlay.prototype.addPageOverlay = function() {
 
 		var backdrop = document.createElement('div');
