@@ -194,6 +194,19 @@
 		}
 	};
 
+	Cleverlay.prototype.validateContentObject = function(object)
+	{
+		if (object.hasOwnProperty("url") && object.hasOwnProperty("type") && object.hasOwnProperty("width") && object.hasOwnProperty("height") && object.hasOwnProperty("token")) {
+
+			return true;
+		}
+
+		else {
+
+			return false;
+		}
+	};
+
 	// If a namespace was specified, attach cleverlay to it.
 
 	if (options instanceof Object && options.namespace instanceof Object) {
