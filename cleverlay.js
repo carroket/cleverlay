@@ -100,6 +100,49 @@
 		document.body.appendChild(this.overlay);
 	};
 
+	Cleverlay.prototype.addSWF = function(url, width, height) {
+
+		var contentFrame = document.createElement('div');
+
+		var swfObject = document.createElement('object');
+
+		var swfParam = document.createElement('param');
+
+
+		this.overlay.style.height = document.body.offsetHeight + 'px';
+
+
+		// Prepare the content frame.
+
+		contentFrame.id = 'PageOverlayContentFrame';
+
+		contentFrame.className = 'CleanContentFrame';
+
+		contentFrame.style.width = width + 'px';
+
+		swfObject.data = url;
+		swfObject.width = width;
+		swfObject.height = height;
+
+		swfObject.id = 'PageOverlaySWFObject';
+		swfObject.title = 'SWF Content (' + url + ')';
+
+
+		// Prepare the SWF param element.
+
+		swfParam.name = 'movie';
+		swfParam.value = url;
+
+
+		// Assemble the content.
+
+		swfObject.appendChild(swfParam);
+
+		contentFrame.appendChild(swfObject);
+
+		this.overlay.appendChild(contentFrame);
+	};
+
 	Cleverlay.prototype.removePageOverlay = function() {
 
 		var backdrop = document.getElementById('PageOverlayBackdrop');
