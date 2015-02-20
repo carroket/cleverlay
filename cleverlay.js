@@ -194,8 +194,8 @@
 		}
 	};
 
-	Cleverlay.prototype.validateContentObject = function(object)
-	{
+	Cleverlay.prototype.validateContentObject = function(object) {
+
 		if (object.hasOwnProperty("url") && object.hasOwnProperty("type") && object.hasOwnProperty("width") && object.hasOwnProperty("height") && object.hasOwnProperty("token")) {
 
 			return true;
