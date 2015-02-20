@@ -172,6 +172,28 @@
 		this.overlay.removeChild(backdrop);
 	};
 
+	Cleverlay.prototype.showContent = function(url, type, width, height, token) {
+
+		if (type == 'swf')
+		{
+			this.overlay = this.addPageOverlay();
+			this.addSWF(url, width, height);
+			return false;
+		}
+
+		else if (type == 'image')
+		{
+			this.overlay = this.addPageOverlay();
+			this.addImage(url, width, height, token);
+			return false;
+		}
+
+		else
+		{
+			return true;
+		}
+	};
+
 	// If a namespace was specified, attach cleverlay to it.
 
 	if (options instanceof Object && options.namespace instanceof Object) {
