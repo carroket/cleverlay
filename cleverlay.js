@@ -172,6 +172,19 @@
 		this.overlay.removeChild(backdrop);
 	};
 
+	Cleverlay.prototype.show = function(object) {
+
+		if (this.validateContentObject(object)) {
+
+			return this.showContent(object.url, object.type, object.width, object.height, object.token);
+		}
+
+		else {
+
+			return true;
+		}
+	};
+
 	Cleverlay.prototype.showContent = function(url, type, width, height, token) {
 
 		if (type == 'swf')
