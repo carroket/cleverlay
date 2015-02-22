@@ -35,31 +35,29 @@
 
 		var contentFrame = document.createElement('div');
 
-		var img = document.createElement('img');
+		var image = document.createElement('img');
 
 
 		// Prepare the content frame.
 
-		contentFrame.id = 'PageOverlayContentFrame';
-
-		contentFrame.className = 'CleanContentFrame';
+		contentFrame.className = 'content-frame clean';
 
 		contentFrame.style.width = width + 'px';
 
 
-		// Prepare the img element.
+		// Prepare the image element.
 
-		img.src = url;
-		img.alt = alt;
-		img.width = width;
-		img.height = height;
+		image.src = url;
+		image.alt = alt;
+		image.width = width;
+		image.height = height;
 
-		img.id = 'PageOverlayImage';
+		image.className = 'image';
 
 
 		// Assemble the content.
 
-		contentFrame.appendChild(img);
+		contentFrame.appendChild(image);
 
 		this.overlay.appendChild(contentFrame);
 	};
@@ -76,17 +74,17 @@
 
 		// Prepare the overlay.
 
-		this.overlay.id = 'PageOverlay';
+		this.overlay.className = 'cleverlay overlay';
 
 
 		// Prepare the backdrop.
 
-		backdrop.id = 'PageOverlayBackdrop';
+		backdrop.className = 'backdrop';
 
 
 		// Prepare the close button.
 
-		closeButton.id = 'PageOverlayCloseButton';
+		closeButton.className = 'close-button';
 
 		closeButton.onclick = this.removePageOverlay;
 
@@ -114,9 +112,7 @@
 
 		// Prepare the content frame.
 
-		contentFrame.id = 'PageOverlayContentFrame';
-
-		contentFrame.className = 'CleanContentFrame';
+		contentFrame.className = 'content-frame clean';
 
 		contentFrame.style.width = width + 'px';
 
@@ -124,7 +120,8 @@
 		swfObject.width = width;
 		swfObject.height = height;
 
-		swfObject.id = 'PageOverlaySWFObject';
+		swfObject.className = 'swf';
+
 		swfObject.title = 'SWF Content (' + url + ')';
 
 
@@ -145,18 +142,26 @@
 
 	Cleverlay.prototype.removePageOverlay = function() {
 
-		var backdrop = document.getElementById('PageOverlayBackdrop');
+		var backdrop = document.querySelector('.cleverlay.overlay > .backdrop');
 
-		var closeButton = document.getElementById('PageOverlayCloseButton');
+		var closeButton = document.querySelector('.cleverlay.overlay > .close-button');
 
-		var contentFrame = document.getElementById('PageOverlayContentFrame');
+		var contentFrame = document.querySelector('.cleverlay.overlay > .content-frame');
 
-		var swfObject = document.getElementById('PageOverlaySWFObject');
+		var image = document.querySelector('.cleverlay.overlay > .content-frame > img');
+
+		var swfObject = document.querySelector('.cleverlay.overlay > .content-frame > object.swf');
 
 
-		this.overlay = document.getElementById('PageOverlay');
+		this.overlay = document.querySelector('.cleverlay.overlay');
 
 		this.overlay.removeChild(closeButton);
+
+
+		if (image) {
+
+			contentFrame.removeChild(image);
+		}
 
 
 		if (swfObject) {
