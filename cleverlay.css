@@ -80,15 +80,6 @@ div.cleverlay.overlay > .content-frame
 {
 	display: block;
 
-	position: relative;
-
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 50px
-}
-
-div.cleverlay.overlay > .content-frame.clean
-{
 	border-radius: 18px;
 
 	background-color: rgba(0, 0, 0, 0.4);
@@ -96,7 +87,13 @@ div.cleverlay.overlay > .content-frame.clean
 
 	padding: 15px;
 
-	overflow: auto
+	overflow: auto;
+
+	position: relative;
+
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px
 }
 
 div.cleverlay.overlay > .content-frame > img

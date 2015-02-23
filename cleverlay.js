@@ -40,7 +40,7 @@
 
 		// Prepare the content frame.
 
-		contentFrame.className = 'content-frame clean';
+		contentFrame.className = 'content-frame';
 
 		contentFrame.style.width = width + 'px';
 
@@ -112,7 +112,7 @@
 
 		// Prepare the content frame.
 
-		contentFrame.className = 'content-frame clean';
+		contentFrame.className = 'content-frame';
 
 		contentFrame.style.width = width + 'px';
 
