@@ -2,6 +2,18 @@
     "name": "cleverlay",
     "version": "0.0.0",
     "description": "A Clean, Fast, Simple Media Overlay System for Web Sites",
+    "devDependencies": {
+        "grunt": "latest",
+        "grunt-contrib-clean": "latest",
+        "grunt-contrib-copy": "latest",
+        "grunt-contrib-cssmin": "latest",
+        "grunt-contrib-htmlmin": "latest",
+        "grunt-contrib-jshint": "latest",
+        "grunt-contrib-uglify": "latest",
+        "grunt-contrib-watch": "latest",
+        "grunt-open": "latest",
+        "grunt-serve": "latest"
+    },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
