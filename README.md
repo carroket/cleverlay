@@ -78,4 +78,4 @@ Clever + Overlay = Cleverlay
 
 ## Who made this?
 
-Clever Contact was made by [Brian Sexton](http://briansexton.com/) of [Carroket, Inc.](http://carroket.com/)
+Cleverlay was made by [Brian Sexton](http://briansexton.com/) of [Carroket, Inc.](http://carroket.com/)
