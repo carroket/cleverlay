@@ -70,7 +70,7 @@ A more robust and refined version of Cleverlay should soon be available along wi
 
 ## Demos
 
-Want to see Cleverlay in action? The [Cleverlay Web site](http://cleverlay.com/) features a few samples that use a work-in-progress version.
+Want to see Cleverlay in action? The [Cleverlay Web site](https://cleverlay.com/) features a few samples that use a work-in-progress version.
 
 ## "Cleverlay"?
 
@@ -78,4 +78,4 @@ Clever + Overlay = Cleverlay
 
 ## Who made this?
 
-Cleverlay was made by [Brian Sexton](http://briansexton.com/) of [Carroket, Inc.](http://carroket.com/)
+Cleverlay was made by [Brian Sexton](https://briansexton.com/) of [Carroket, Inc.](https://carroket.com/)
