@@ -81,6 +81,8 @@
 
 		backdrop.className = 'backdrop';
 
+		backdrop.onclick = this.removePageOverlay;
+
 
 		// Prepare the close button.
 
