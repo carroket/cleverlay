@@ -33,6 +33,17 @@ div.cleverlay.overlay
 	z-index: 6000
 }
 
+div.cleverlay.overlay.fade-in
+{
+	opacity: 0;
+
+	animation: fade-in-overlay ease-in 1;
+
+	animation-fill-mode: forwards;
+
+	animation-duration: 0.2s
+}
+
 div.cleverlay.overlay > .backdrop
 {
 	display: block;
@@ -106,4 +117,17 @@ div.cleverlay.overlay > .content-frame > img
 div.cleverlay.overlay > .content-frame > object.swf
 {
 	display: block
+}
+
+@keyframes fade-in-overlay
+{
+	from
+	{
+		opacity: 0
+	}
+
+	to
+	{
+		opacity: 1
+	}
 }
