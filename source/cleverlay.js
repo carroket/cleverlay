@@ -83,6 +83,11 @@
 
 		this.overlay.className = 'cleverlay overlay';
 
+		if (options instanceof Object && options.fadeIn === true) {
+
+			this.overlay.classList.add('fade-in');
+		}
+
 
 		// Prepare the backdrop.
 
