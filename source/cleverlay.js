@@ -31,6 +31,13 @@
 
 	// TO DO: Write it, cut it, paste it, save it. Load it, check it, quick—rewrite it.
 
+	Cleverlay.prototype.addHTML = function(html) {
+
+		var fragment = document.createRange().createContextualFragment(html);
+
+		this.overlay.appendChild(fragment);
+	}
+
 	Cleverlay.prototype.addImage = function(url, width, height, alt) {
 
 		var contentFrame = document.createElement('div');
@@ -142,6 +149,20 @@
 		this.overlay.appendChild(contentFrame);
 	};
 
+	Cleverlay.prototype.loadHTML = function(uri, callback) {
+
+		// TODO: Consider doing something about HTTP errors and Promise rejections.
+
+		fetch(uri, {method: 'get'})
+
+			.then(function(response) {
+
+				return response.text();
+			})
+
+			.then(callback);
+	}
+
 	Cleverlay.prototype.removePageOverlay = function() {
 
 		var backdrop = document.querySelector('.cleverlay.overlay > .backdrop');
@@ -174,7 +195,10 @@
 
 		document.body.removeChild(this.overlay);
 
-		this.overlay.removeChild(contentFrame);
+		if (contentFrame) {
+
+			this.overlay.removeChild(contentFrame);
+		}
 
 		this.overlay.removeChild(backdrop);
 	};
@@ -192,7 +216,7 @@
 		}
 	};
 
-	Cleverlay.prototype.showContent = function(url, type, width, height, token) {
+	Cleverlay.prototype.showContent = function(url, type, width, height, token, html) {
 
 		if (type == 'swf')
 		{
@@ -205,6 +229,26 @@
 		{
 			this.addPageOverlay();
 			this.addImage(url, width, height, token);
+			return false;
+		}
+
+		else if (type == 'html')
+		{
+			this.addPageOverlay();
+
+			if (url) {
+
+				this.loadHTML(url, function(html) {
+
+					cleverlay.addHTML(html);
+				});
+			}
+
+			else if (html) {
+
+				this.addHTML(html);
+			}
+
 			return false;
 		}
 
